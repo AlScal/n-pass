@@ -19,10 +19,10 @@ body {
 
 .button {
     position: absolute;
-    top: 50%;
+    top: 57%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 10vw;
+    width: 20vw;
     height: auto;
     cursor: pointer;
 }
