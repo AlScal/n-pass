@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFC Access Site</title>
+    <style>
+        /* General body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Container styles */
+        .container {
+            position: relative;
+            width: 90%;
+            max-width: 600px;
+            aspect-ratio: 3 / 4; /* Adjust for the background image aspect ratio */
+            background: url('./background.jpg') no-repeat center center; /* Link to your JPG */
+            background-size: cover;
+        }
+
+        /* Button styles */
+        .button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px; /* Adjust based on PNG size */
+            height: auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="button" src="./button.png" alt="Play Button"> <!-- Link to your PNG -->
+        <audio id="audio" src="./audio.mp3"></audio> <!-- Link to your MP3 -->
+    </div>
+
+    <script>
+        const button = document.querySelector('.button');
+        const audio = document.getElementById('audio');
+        const accessKey = 'nfcKey';
+        const nfcAccess = new URLSearchParams(window.location.search).get('nfc');
+        
+        // Check NFC access
+        if (!nfcAccess) {
+            alert('This site can only be accessed via an NFC tag!');
+            button.style.display = 'none';
+        }
+
+        // Play sound on button click
+        button.addEventListener('click', () => {
+            audio.play();
+        });
+    </script>
+</body>
+</html>
