@@ -38,7 +38,13 @@
         // Play audio when button is clicked
         function playAudio() {
             const audio = document.getElementById('audio');
+          const button = document.getElementById('nfc-button');
+
+            // Play the audio
             audio.play();
+
+            // Hide the button after use
+            button.style.display = 'none';
         }
 
         // Run NFC check on page load
