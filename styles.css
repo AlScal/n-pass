@@ -42,3 +42,15 @@ body {
     height: auto;
     cursor: pointer;
 }
+
+/* Styling the black line */
+#black-line {
+    position: absolute;
+    top: 60%;  /* Position it just below the button */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;  /* Adjust width of the line */
+    height: 2px;
+    background-color: black;
+    display: none;  /* Hide the line by default */
+}
