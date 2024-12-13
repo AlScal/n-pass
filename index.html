@@ -27,53 +27,8 @@
 <body>
     <h1>NFC Trigger Test</h1>
     <p>Tap NFC to activate the button.</p>
-    <button id="nfc-button" onclick="playAudio()">Play Sound</button>
+    <button id="nfc-button">Play Sound</button>
     <audio id="audio" src="audio.mp3"></audio>
-<script>
-    // Function to handle NFC activation
-    function checkNFC() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const nfcActivated = urlParams.get('nfc') === 'true';
-
-        // If NFC is activated, reset the state
-        if (nfcActivated) {
-            localStorage.removeItem('buttonUsed'); // Allow the button to reset
-            localStorage.setItem('nfcActivated', 'true');
-        }
-    }
-
-    // Function to play audio and hide the button
-    function playAudio() {
-        const audio = document.getElementById('audio');
-        const button = document.getElementById('nfc-button');
-
-        // Play the audio
-        audio.play();
-
-        // Hide the button and mark it as used
-        button.style.display = 'none';
-        localStorage.setItem('buttonUsed', 'true');
-    }
-
-    // Function to initialize the button state
-    function initializeButton() {
-        const button = document.getElementById('nfc-button');
-        const nfcActivated = localStorage.getItem('nfcActivated') === 'true';
-        const buttonUsed = localStorage.getItem('buttonUsed') === 'true';
-
-        // Logic for displaying the button
-        if (nfcActivated && !buttonUsed) {
-            // Show the button if NFC is activated and it hasn't been used
-            button.style.display = 'block';
-        } else {
-            // Hide the button otherwise
-            button.style.display = 'none';
-        }
-    }
-
-    // Run NFC check and initialize button state on page load
-    checkNFC();
-    initializeButton();
-</script>
+    <script src="script.js"></script>
 </body>
 </html>
