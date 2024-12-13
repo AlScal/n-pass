@@ -1,71 +1,44 @@
-/* General Styles */
 body {
     margin: 0;
     padding: 0;
-    background: black; /* Black background */
+    background-color: black;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    font-family: Arial, sans-serif;
     overflow: hidden;
 }
 
-/* Container with Gold Border */
 .container {
-    width: 90%; /* Width optimized for mobile screens */
-    height: 90%; /* Height optimized for mobile screens */
-    border: 5px solid gold; /* Gold border */
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    aspect-ratio: 3 / 4;
+    border: 10px solid gold; /* Gold border */
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
+}
+
+.main-text-container {
     position: relative;
+    width: 90%;
+    height: auto;
+    text-align: center;
 }
 
-/* Background Image */
-.background {
+.main-text {
+    width: 100%; /* Scale the PNG to fit within the container */
+    height: auto;
+}
+
+.button {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Ensures the image fits proportionally */
-    z-index: -1; /* Keeps the image behind other elements */
-}
-
-/* NFC Button */
-#nfc-button {
-    background: url('button.png') no-repeat center center;
-    background-size: contain;
-    width: 80px; /* Adjusted for mobile scaling */
-    height: 80px;
-    border: none;
-    cursor: pointer;
-    z-index: 1; /* Ensure the button is above the background */
-    position: absolute; /* Centered relative to the parent container */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-/* Button Press Effect */
-#nfc-button:active {
-    transform: translate(-50%, -50%) scale(0.95); /* Adds a slight press effect */
-}
-
-/* Mobile Optimization */
-@media (max-width: 768px) {
-    .container {
-        width: 95%; /* Slightly wider for smaller screens */
-        height: 95%;
-    }
-
-    #nfc-button {
-        width: auto; /* Smaller button size for small devices */
-        height: auto;
-        z-index: 10;
-    }
-}
-
-/* Button Press Effect */
-#nfc-button:active {
-    transform: translate(-50%, -50%) scale(0.95); /* Adds a slight press effect */
+    width: 20%; /* Adjust button size */
+    height: auto;
+    cursor: pointer;
 }
