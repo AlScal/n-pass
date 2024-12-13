@@ -59,8 +59,9 @@ body {
     }
 
     #nfc-button {
-        width: 60px; /* Smaller button size for small devices */
-        height: 60px;
+        width: auto; /* Smaller button size for small devices */
+        height: auto;
+        z-index: 10;
     }
 }
 
