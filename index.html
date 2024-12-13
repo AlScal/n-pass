@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+4<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,9 +26,10 @@
     function checkNFC() {
         const urlParams = new URLSearchParams(window.location.search);
         const nfcActivated = urlParams.get('nfc') === 'true';
+        const buttonUsed = localStorage.getItem('buttonUsed') === 'true';
 
-        if (nfcActivated) {
-            // Only clear the buttonUsed flag if NFC is activated
+        if (nfcActivated && !buttonUsed) {
+            // NFC is active, and button has not been used
             localStorage.removeItem('buttonUsed');
         }
     }
@@ -49,12 +50,13 @@
     // Function to initialize the button state
     function initializeButton() {
         const button = document.getElementById('nfc-button');
-        const buttonUsed = localStorage.getItem('buttonUsed');
+        const buttonUsed = localStorage.getItem('buttonUsed') === 'true';
 
-        // If the button was used and not reset by NFC, hide it
-        if (buttonUsed === 'true') {
+        // If the button was used, keep it hidden
+        if (buttonUsed) {
             button.style.display = 'none';
         } else {
+            // Otherwise, show the button
             button.style.display = 'block';
         }
     }
