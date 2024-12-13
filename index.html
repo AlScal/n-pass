@@ -1,4 +1,36 @@
-<script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFC Test</title>
+    <style>
+        body {
+            background: black;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        #nfc-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: gold;
+            color: black;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            display: none; /* Default hidden */
+        }
+    </style>
+</head>
+<body>
+    <h1>NFC Trigger Test</h1>
+    <p>Tap NFC to activate the button.</p>
+    <button id="nfc-button" onclick="playAudio()">Play Sound</button>
+    <audio id="audio" src="audio.mp3"></audio>
+    <script>
+
     // Function to handle NFC activation
     function checkNFC() {
         const urlParams = new URLSearchParams(window.location.search);
@@ -44,3 +76,5 @@
     checkNFC();
     initializeButton();
 </script>
+</body>
+</html>
