@@ -29,8 +29,9 @@
         const buttonUsed = localStorage.getItem('buttonUsed') === 'true';
 
         if (nfcActivated && !buttonUsed) {
-            // NFC is active, and button has not been used
+            // NFC is active, reset the 'buttonUsed' flag to make button reappear
             localStorage.removeItem('buttonUsed');
+            initializeButton(); // Make the button visible again when NFC is tapped
         }
     }
 
