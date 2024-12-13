@@ -13,8 +13,8 @@ body {
     position: relative;
     width: 90%;
     max-width: 600px;
-    aspect-ratio: 3 / 4;
-    border: 10px solid gold; /* Gold border */
+    aspect-ratio: 4 / 3;
+    border: 5px solid gold; /* Gold border */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,7 +35,7 @@ body {
 
 .button {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 20%; /* Adjust button size */
