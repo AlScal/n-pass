@@ -12,8 +12,8 @@ body {
 .container {
     position: relative;
     width: auto;
-    max-width: 600px;
-    aspect-ratio: 3 / 4;
+    max-width: 800px;
+    aspect-ratio: 4 / 3;
     border: 5px solid gold; /* Gold border */
     display: flex;
     justify-content: center;
@@ -23,8 +23,8 @@ body {
 
 .main-text-container {
     position: relative;
-    width: auto;
-    height: 300px;
+    width: 90%;
+    height: auto;
     text-align: center;
 }
 
@@ -35,7 +35,7 @@ body {
 
 .button {
     position: absolute;
-    top: 10%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 20%; /* Adjust button size */
