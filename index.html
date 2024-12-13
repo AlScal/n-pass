@@ -6,29 +6,52 @@
     <title>NFC Test</title>
     <style>
         body {
+            margin: 0;
+            padding: 0;
             background: black;
-            color: white;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the screen proportionally */
+            z-index: -1;
         }
 
         #nfc-button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: gold;
-            color: black;
+            background: url('button.png') no-repeat center center;
+            background-size: contain;
+            width: 150px; /* Adjust to your PNG's dimensions */
+            height: 150px;
             border: none;
-            font-size: 16px;
             cursor: pointer;
-            display: none; /* Default hidden */
+        }
+
+        #nfc-button:active {
+            transform: scale(0.95); /* Adds a slight press effect */
         }
     </style>
 </head>
 <body>
-    <h1>NFC Trigger Test</h1>
-    <p>Tap NFC to activate the button.</p>
-    <button id="nfc-button">Play Sound</button>
+    <!-- Background Image -->
+    <img src="background.png" alt="Background" class="background">
+
+    <!-- NFC Button -->
+    <button id="nfc-button"></button>
+
+    <!-- Audio File -->
     <audio id="audio" src="audio.mp3"></audio>
+
+    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
