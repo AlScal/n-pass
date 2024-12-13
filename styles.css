@@ -1,44 +1,39 @@
+/* General Styles */
 body {
     margin: 0;
     padding: 0;
-    background-color: black;
-    height: 100vh;
+    background: black;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
     overflow: hidden;
 }
 
-.container {
-    position: relative;
-    width: auto;
-    max-width: 800px;
-    aspect-ratio: 4 / 3;
-    border: 5px solid gold; /* Gold border */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-}
-
-.main-text-container {
-    position: relative;
-    width: 90%;
-    height: auto;
-    text-align: center;
-}
-
-.main-text {
-    width: 100%; /* Scale the PNG to fit within the container */
-    height: auto;
-}
-
-.button {
+/* Background Image */
+.background {
     position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 20%; /* Adjust button size */
-    height: auto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the screen proportionally */
+    z-index: -1;
+}
+
+/* NFC Button */
+#nfc-button {
+    background: url('button.png') no-repeat center center;
+    background-size: contain;
+    width: 150px; /* Adjust to your PNG's dimensions */
+    height: 150px;
+    border: none;
     cursor: pointer;
+    z-index: 1; /* Ensure the button is above the background */
+}
+
+/* Button Press Effect */
+#nfc-button:active {
+    transform: scale(0.95); /* Adds a slight press effect */
 }
