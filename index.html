@@ -8,12 +8,16 @@
 </head>
 <body>
     <div class="container">
-        <!-- Button Image -->
-        <img class="button" src="./button.png" alt="Play Button" id="nfc-button" onclick="playAudio()">
+        <!-- Main Text Image -->
+        <div class="main-text-container">
+            <img class="main-text" src="./main-text.png" alt="Main Text">
+            <!-- Button Image -->
+            <img class="button" src="./button.png" alt="Play Button" id="nfc-button" onclick="playAudio()">
+        </div>
         <!-- Audio File -->
         <audio id="audio" src="./audio.mp3"></audio>
         <!-- Message if NFC is not detected -->
-        <div id="error-message" style="display: none; color: white; text-align: center; position: absolute; top: 80%; left: 50%; transform: translate(-50%, -50%);">
+        <div id="error-message" style="display: none; color: white; text-align: center; position: absolute; top: 90%; left: 50%; transform: translate(-50%, -50%);">
             This site must be accessed via NFC.
         </div>
     </div>
@@ -67,4 +71,3 @@
     </script>
 </body>
 </html>
-

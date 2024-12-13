@@ -1,28 +1,44 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: black;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
-    height: 100vh;
     overflow: hidden;
 }
 
 .container {
-    width: 65vw;
-    height: 65vh;
-    background: url('./background.jpg') no-repeat center center;
-    background-size: cover;
     position: relative;
+    width: 90%;
+    max-width: 600px;
+    aspect-ratio: 3 / 4;
+    border: 10px solid gold; /* Gold border */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.main-text-container {
+    position: relative;
+    width: 90%;
+    height: auto;
+    text-align: center;
+}
+
+.main-text {
+    width: 100%; /* Scale the PNG to fit within the container */
+    height: auto;
 }
 
 .button {
     position: absolute;
-    top: 65%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 30vw;
+    width: 20%; /* Adjust button size */
     height: auto;
     cursor: pointer;
 }
