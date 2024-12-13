@@ -48,7 +48,7 @@ body {
     position: absolute;
     top: 60%;  /* Position it just below the button */
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateXY(-50%);
     width: 60%;  /* Adjust width of the line */
     height: 2px;
     background-color: red;
