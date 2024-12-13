@@ -24,14 +24,15 @@
 <script>
     // Function to check NFC activation
     function checkNFC() {
+        // Assume NFC URL parameter is passed (e.g., ?nfc=true)
         const urlParams = new URLSearchParams(window.location.search);
         const nfcActivated = urlParams.get('nfc') === 'true';
         const buttonUsed = localStorage.getItem('buttonUsed') === 'true';
 
         if (nfcActivated && !buttonUsed) {
-            // NFC is active, reset the 'buttonUsed' flag to make button reappear
+            // NFC is detected but button wasn't used, reset the flag to make the button appear
             localStorage.removeItem('buttonUsed');
-            initializeButton(); // Make the button visible again when NFC is tapped
+            initializeButton(); // Show the button again
         }
     }
 
@@ -53,7 +54,7 @@
         const button = document.getElementById('nfc-button');
         const buttonUsed = localStorage.getItem('buttonUsed') === 'true';
 
-        // If the button was used, keep it hidden
+        // If the button was used, hide it
         if (buttonUsed) {
             button.style.display = 'none';
         } else {
