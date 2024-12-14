@@ -46,7 +46,7 @@ body {
 /* Styling the black line */
 #black-line {
     position: absolute;
-    top: 75%;  /* Position it just below the button */
+    top: 73%;  /* Position it just below the button */
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100px;  /* Adjust width of the line */
