@@ -51,6 +51,6 @@ body {
     transform: translate(-50%, -50%);
     width: 100px;  /* Adjust width of the line */
     height: 2px;
-    background-color: red;
+    background-color: black;
     display: none;  /* Hide the line by default */
 }
