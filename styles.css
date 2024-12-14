@@ -50,7 +50,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100px;  /* Adjust width of the line */
-    height: 3px;
+    height: 5px;
     background-color: black;
     display: none;  /* Hide the line by default */
 }
